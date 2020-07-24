@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: gau.nau.junit5.BasicSalaryCalculatorTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.012 sec <<< FAILURE! - in gau.nau.junit5.BasicSalaryCalculatorTest
+initializationError  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.Exception: Method testBasicSalaryWithValidSalary() should be public
+
+initializationError  Time elapsed: 0.002 sec  <<< FAILURE!
+org.opentest4j.MultipleFailuresError: 
+Multiple Failures (2 failures)
+	Method testBasicSalaryWithValidSalary() should be public
+	Method testBasicSalaryWithInvalidSalary() should be public
+
