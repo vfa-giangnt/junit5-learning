@@ -11,14 +11,14 @@ public class TestDemo {
     public void testIsPrimeNumber1() {
         Demo demo1 = new Demo();
         boolean result = demo1.isPrimeNumber(-1);
-        assertTrue(result);
+        assertFalse(result);
     }
     
     @Test
     public void testIsPrimeNumber2() {
         Demo demo2 = new Demo();
         boolean result = demo2.isPrimeNumber(0);
-        assertTrue(result);
+        assertFalse(result);
     }
     
     @Test
