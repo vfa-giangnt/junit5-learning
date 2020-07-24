@@ -30,64 +30,61 @@ public class AssertTest {
     @Test
     public void testAssertArrayEquals() {
         byte[] expected = "trial".getBytes();
-        byte[] actual = "trials".getBytes();
-        
+        byte[] actual = "trial".getBytes();
         assertArrayEquals("failure - byte arrays not same", expected, actual);
     }
     
     @Test
     public void testAssertEquals() {
-        assertEquals("failure - strings are not equal", "texts", "text");
+        assertEquals("failure - strings are not equal", "text", "text");
     }
     
     @Test
     public void testAssertFalse() {
-        assertFalse("failure - should be false", true);
+        assertFalse("failure - should be false", false);
     }
     
     @Test
     public void testAssertNotNull() {
-        assertNotNull("should not be null", null);
+        assertNotNull("should not be null", new Object());
     }
     
     @Test
     public void testAssertNotSame() {
-        Object object = new Object();
-        assertNotSame("should not be same Object", object, object);
+        assertNotSame("should not be same Object", new Object(), new Object());
     }
     
     @Test
     public void testAssertNull() {
-        assertNull("should be null", new Object());
+        assertNull("should be null", null);
     }
     
     @Test
     public void testAssertSame() {
         Integer aNumber = Integer.valueOf(768);
-        Integer bNumber = Integer.valueOf(786);
-        assertSame("should be same", aNumber, bNumber);
+        assertSame("should be same", aNumber, aNumber);
     }
     
     // JUnit Matchers assertThat
     @Test
     public void testAssertThatBothContainsString() {
-        assertThat("albumen", both(containsString("alz")).and(containsString("bu")));
+        assertThat("albumen", both(containsString("a")).and(containsString("b")));
     }
     
     @Test
     public void testAssertThatHasItems() {
-        assertThat(Arrays.asList("one", "two", "three"), hasItems("four", "three"));
+        assertThat(Arrays.asList("one", "two", "three"), hasItems("one", "three"));
     }
     
     @Test
     public void testAssertThatEveryItemContainsString() {
-        assertThat(Arrays.asList(new String[]{"fun", "ban", "net"}), everyItem(containsString("z")));
+        assertThat(Arrays.asList(new String[]{"fun", "ban", "net"}), everyItem(containsString("n")));
     }
     
     // Core Hamcrest Matchers with assertThat
     @Test
     public void testAssertThatHamcrestCoreMatchers() {
-        assertThat("good", allOf(equalTo("good"), startsWith("gaunau")));
+        assertThat("good", allOf(equalTo("good"), startsWith("good")));
         assertThat("good", not(allOf(equalTo("bad"), equalTo("good"))));
         assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
         assertThat(7, not(CombinableMatcher.<Integer>either(equalTo(3)).or(equalTo(4))));
@@ -96,6 +93,6 @@ public class AssertTest {
     
     @Test
     public void testAssertTrue() {
-        assertTrue("failure - should be true", false);
+        assertTrue("failure - should be true", true);
     }
 }
